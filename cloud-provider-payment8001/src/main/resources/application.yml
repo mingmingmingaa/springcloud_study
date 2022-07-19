@@ -1,0 +1,31 @@
+# tomcat配置
+server:
+  tomcat:
+    uri-encoding: utf-8
+    connection-timeout: 5000ms
+  port: 8000
+  servlet:
+    #    context-path: /emos-wx-api
+    encoding:
+      charset: utf-8
+#      enabled: true
+#      force: true
+# mysql数据源
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://42.193.4.65:3306/cloud2022?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: abc123456
+      initial-size: 4
+      max-active: 8
+      min-idle: 4
+      max-wait: 60000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
