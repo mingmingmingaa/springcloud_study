@@ -1,0 +1,23 @@
+# tomcat配置
+server:
+  tomcat:
+    uri-encoding: utf-8
+    connection-timeout: 5000ms
+
+  port: 80
+  servlet:
+    #    context-path: /emos-wx-api
+    encoding:
+      charset: utf-8
+#      enabled: true
+#      force: true
+# mysql数据源
+spring:
+  application:
+    name: cloud-consumer-feign-order80
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka

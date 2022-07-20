@@ -3,7 +3,7 @@ server:
   tomcat:
     uri-encoding: utf-8
     connection-timeout: 5000ms
-  port: 8000
+  port: 8001
   servlet:
     #    context-path: /emos-wx-api
     encoding:
@@ -26,6 +26,15 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
+  application:
+    name: cloud-payment-service
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka

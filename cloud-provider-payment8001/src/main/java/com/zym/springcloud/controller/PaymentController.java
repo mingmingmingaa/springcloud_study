@@ -4,6 +4,7 @@ import com.zym.springcloud.entities.CommonResult;
 import com.zym.springcloud.entities.Payment;
 import com.zym.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +24,9 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+    @Value("${server.port}")
+    private String port;
+
     @PostMapping(value = "/payment/create")
     //把payment封装成bean对象
     public CommonResult<Payment> create(@RequestBody Payment payment) { //埋雷
@@ -37,6 +41,7 @@ public class PaymentController {
 
     @GetMapping(value = "/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
+        System.out.println("port" + port);
         Payment payment = paymentService.getPaymentById(id);
         log.info("*****查询结果：" + payment);
         if (payment != null) {  //说明有数据，能查询成功
