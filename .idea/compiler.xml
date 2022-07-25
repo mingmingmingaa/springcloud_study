@@ -10,11 +10,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-provider-payment8002" />
-        <module name="cloud-consumer-order80" />
+        <module name="cloudalibaba-provider-payment9001" />
         <module name="cloud-eureka-server7001" />
         <module name="cloud-api-commons" />
         <module name="cloud-cousumer-feign-order80" />
+        <module name="cloud-gateway-gateway9527" />
         <module name="cloud-provider-payment8001" />
+        <module name="cloud-consumer-feign-hystrix-order80" />
+        <module name="cloud-consumer-order80" />
+        <module name="cloud-provider-hystrix-payment8001" />
+        <module name="cloud-consumer-hystrix-dashboard9001" />
       </profile>
     </annotationProcessing>
   </component>
